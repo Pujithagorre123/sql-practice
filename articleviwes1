@@ -1,0 +1,13 @@
+-- Problem: Find authors who viewed at least one of their own articles
+-- Platform: LeetCode
+-- Concept: WHERE condition with DISTINCT
+
+SELECT DISTINCT author_id AS id
+FROM Views
+WHERE author_id = viewer_id
+ORDER BY id ASC;
+
+-- Explanation:
+-- WHERE author_id = viewer_id filters rows where author viewed their own article
+-- DISTINCT removes duplicate author ids
+-- ORDER BY ensures the result is sorted in ascending order
