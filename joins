@@ -1,0 +1,14 @@
+-- Problem: Replace Employee ID With The Unique Identifier
+-- Platform: LeetCode
+-- Concept: LEFT JOIN
+
+SELECT EmployeeUNI.unique_id, Employees.name
+FROM Employees
+LEFT JOIN EmployeeUNI
+ON Employees.id = EmployeeUNI.id;
+
+-- Explanation:
+-- LEFT JOIN combines both tables based on matching id values
+-- Employees.id = EmployeeUNI.id connects the two tables
+-- All rows from Employees are included
+-- If there is no matching id in EmployeeUNI, unique_id will be NULL
